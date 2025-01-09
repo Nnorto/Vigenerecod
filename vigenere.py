@@ -1,8 +1,10 @@
 from caesar import csr
 from cycletext import cycl
 from decoder import csrd
+
+
 def vig(text, k, f):
-    key = cycl(text,k)
+    key = cycl(text, k)
     ns = ''
     flag = f
     if flag == 1:
