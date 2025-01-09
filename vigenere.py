@@ -1,16 +1,24 @@
-from caesar import csr
-from cycletext import cycl
-from decoder import csrd
+from caesar import *
+from cycletext import *
+from decoder import *
 
 
-def vig(text, k, f):
+def vig(text, k, f, language):
     key = cycl(text, k)
     ns = ''
     flag = f
     if flag == 1:
-        for i in range(len(text)):
-            ns += csr(text[i], key[i])
+        if language == 1:
+            for i in range(len(text)):
+                ns += csrru(text[i], key[i])
+        else:
+            for i in range(len(text)):
+                ns += csreng(text[i], key[i])
     else:
-        for i in range(len(text)):
-            ns += csrd(text[i], key[i])
+        if language == 1:
+            for i in range(len(text)):
+                ns += csrdru(text[i], key[i])
+        else:
+            for i in range(len(text)):
+                ns += csrdeng(text[i], key[i])
     return ns
