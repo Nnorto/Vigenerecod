@@ -1,7 +1,7 @@
 import strings
 
 
-def csreng(el, cod):
+def csreng(el, cod, shft):
     """
     Алгоритм для кодирования английских символов
     :param el: Символ который необходимо зашифровать.
@@ -14,9 +14,9 @@ def csreng(el, cod):
     if el not in s:
         ns = cod
     else:
-        ns = s[(let + chg) % len(s)]
+        ns = s[(let + chg) % len(s) + (shft % len(s))]
     return ns
-def csrru(el, cod):
+def csrru(el, cod, shft):
     """
     Алгоритм для кодирования русских символов
     :param el: Символ который необходимо зашифровать.
@@ -29,5 +29,5 @@ def csrru(el, cod):
     if el not in s:
         ns = cod
     else:
-        ns = s[(let + chg) % len(s)]
+        ns = s[(let + chg) % len(s) + (shft % len(s))]
     return ns

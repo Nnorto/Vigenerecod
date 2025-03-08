@@ -1,5 +1,5 @@
 import strings
-def csrdeng(el, cod):
+def csrdeng(el, cod, shft):
     """
     Алгоритм для декодирования английских символов
     :param el: Символ который необходимо расшифровать.
@@ -13,10 +13,10 @@ def csrdeng(el, cod):
     if el not in s:
         ns = cod
     else:
-        ns = s[(let - chg) % len(s)]
+        ns = s[(let - chg) % len(s) - (shft % len(s))]
     return ns
 
-def csrdru(el, cod):
+def csrdru(el, cod, shft):
     """
     Алгоритм для декодирования русских символов
     :param el: Символ который необходимо расшифровать.
@@ -30,5 +30,5 @@ def csrdru(el, cod):
     if el not in s:
         ns = cod
     else:
-        ns = s[(let - chg) % len(s)]
+        ns = s[(let - chg) % len(s) - (shft % len(s))]
     return ns

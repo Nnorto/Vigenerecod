@@ -1,10 +1,83 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Шифратор Виженера</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            text-align: center;
+            background-color: #f9f9f9;
+        }
+        .container {
+            width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        textarea, input, select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .radio-group {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 15px 0;
+        }
+        .btn {
+            background-color: orange;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 15px;
+        }
+        .btn:hover {
+            background-color: darkorange;
+        }
+        .result {
+            font-size: 18px;
+            margin-top: 20px;
+            font-weight: bold;
+            color: green;
+        }
+    </style>
 </head>
 <body>
-$END$
+    <div class="container">
+        <h2>Шифр Виженера</h2>
+
+        <label>Текст:</label>
+        <textarea id="text" rows="3" placeholder="Введите текст"></textarea>
+
+        <label>Ключ:</label>
+        <input type="text" id="key" placeholder="Введите ключ">
+
+        <label>Преобразование:</label>
+        <div class="radio-group">
+            <label><input type="radio" name="mode" value="1" checked> Зашифровать</label>
+            <label><input type="radio" name="mode" value="2"> Расшифровать</label>
+        </div>
+
+        <label>Алфавит:</label>
+        <select id="language">
+            <option value="1">Русский</option>
+            <option value="2">Английский</option>
+        </select>
+
+        <button class="btn">Рассчитать</button>
+
+        <div class="result">Преобразованный текст появится здесь</div>
+    </div>
 </body>
 </html>
