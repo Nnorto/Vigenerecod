@@ -1,11 +1,12 @@
 import strings
 
 
-def csreng(el, cod, shft):
+def csreng(el, cod, shift):
     """
     Алгоритм для кодирования английских символов
     :param el: Символ который необходимо зашифровать.
     :param cod: Ключ по которому осуществляется сдвиг.
+    :param start: Буква которая отвечает за начало алфавита
     :return: Вернёт зашифрованный символ.
     """
     s = strings.ENGALF
@@ -14,9 +15,9 @@ def csreng(el, cod, shft):
     if el not in s:
         ns = cod
     else:
-        ns = s[(let + chg) % len(s) + (shft % len(s))]
+        ns = s[(let + chg + shift) % len(s)]
     return ns
-def csrru(el, cod, shft):
+def csrru(el, cod, shift):
     """
     Алгоритм для кодирования русских символов
     :param el: Символ который необходимо зашифровать.
@@ -29,5 +30,5 @@ def csrru(el, cod, shft):
     if el not in s:
         ns = cod
     else:
-        ns = s[(let + chg) % len(s) + (shft % len(s))]
+        ns = s[(let + chg + shift) % len(s)]
     return ns
