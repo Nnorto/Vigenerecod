@@ -2,7 +2,6 @@ from caesar import *
 from cycletext import *
 from decoder import *
 
-
 def vig(text, k, f, shift, language):
     key = cycl(text, k)
     ns = ''
